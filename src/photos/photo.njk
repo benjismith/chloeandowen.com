@@ -1,0 +1,22 @@
+---
+pagination:
+  data: gallery.photos
+  size: 1
+  alias: photo
+permalink: "/photos/{{ photo.id }}/"
+layout: layouts/base.njk
+eleventyComputed:
+  title: "{{ photo.titleText or photo.id }}"
+---
+
+						<table border="0" cellspacing="0" cellpadding="0" width="750">
+							<tr>
+								<td><img src="/images/{{ photo.id }}.jpg"></td>
+								<td>
+									<div id="colorScroll" style="{width:300;height:304;padding:15px;overflow:auto;}">
+										<p class="photoTitle">{{ photo.titleHtml | safe }}</p>
+										<p class="default">{{ photo.captionHtml | safe }}</p>
+									</div>
+								</td>
+							</tr>
+						</table>

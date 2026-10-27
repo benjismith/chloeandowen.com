@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+---
+
+						<table border="0" cellspacing="0" cellpadding="0" width="750">
+							<tr>
+								<td><script>
+									// The old site showed a different photo here on every visit; keep doing that.
+									var ids = "{{ gallery.ids }}".split(",");
+									document.write('<img src="/images/' + ids[Math.floor(Math.random() * ids.length)] + '.jpg">');
+								</script><noscript><img src="/images/R52-09.jpg"></noscript></td>
+								<td>
+									<div id="colorScroll" style="{width:300;height:304;padding:15px;overflow:auto;}">
+										<p class="photoTitle">Babies Babies Babies!!!</p>
+										<p class="default">These days, the babies are doing fantastic things. Owen is crawling and trying really hard to stand up by himself. Chloe is rolling to her sides, and sitting up (nearly) all by herself.
+										<br><br>A huge huge huge thanks to everybody for coming back to this website over and over again. We really appreciate your love and support. I've been a little slow sometimes in getting stuff up, but I hope you enjoy it.
+										<br><br>As always, click the updates button below to read the latest news about the babies <i>(NOTE: the "latest news" is really really out-of-date)</i> or click the photos button to get (oddly enough) photos of the babies. There are tons of new photos. Enjoy them.
+										<br><br>--Benji</p>
+									</div>
+								</td>
+							</tr>
+						</table>

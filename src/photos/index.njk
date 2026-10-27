@@ -1,0 +1,30 @@
+---
+layout: layouts/base.njk
+title: All Photos
+permalink: /photos/
+---
+
+						<div align="center">
+							<table border="0" cellspacing="5" cellpadding="5">
+								<tr></tr>
+{%- for album in gallery.albums %}
+{%- if not loop.first and gallery.albums[loop.index0 - 1].photos.length % 6 == 0 %}
+								<tr></tr>
+{%- endif %}
+								<tr>
+									<td class="photoTitle" colspan="6" align="center" valign="middle">Roll - {{ album.number }}</td>
+								</tr>
+{%- for row in album.photos | chunk(6) %}
+								<tr>
+{%- for p in row %}
+									<td width="90" height="90" align="center" valign="middle"><a href="/photos/{{ p.id }}/"><img src="/images/thumbs/{{ p.id }}.jpg" border="0"></a></td>
+{%- endfor %}
+								</tr>
+{%- endfor %}
+{%- if loop.last and album.photos.length % 6 == 0 %}
+								<tr></tr>
+{%- endif %}
+{%- endfor %}
+							</table>
+						</div>
+						<br><br>

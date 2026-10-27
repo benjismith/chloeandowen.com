@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{% if title %}{{ title }} - chloeandowen.com{% else %}chloeandowen.com{% endif %}</title>
+		<style>
+			.default { font-family:Verdana,Arial,Helvetica,Sans-Serif;font-size:10; }
+			a.defaultLink { font-family:Verdana,Arial,Helvetica,Sans-Serif;font-size:10;font-weight:bold;color:8C3312;text-decoration:none; }
+			a.defaultLink:hover { font-family:Verdana,Arial,Helvetica,Sans-Serif;font-size:10;font-weight:bold;color:8C3312;text-decoration:underline; }
+			a.whiteLink { font-family:Verdana,Arial,Helvetica,Sans-Serif;font-size:10;font-weight:bold;color:ffffff;text-decoration:none; }
+			a.whiteLink:hover { font-family:Verdana,Arial,Helvetica,Sans-Serif;font-size:10;font-weight:bold;color:ffffff;text-decoration:underline; }
+			.photoTitle { font-family:Verdana,Arial,Helvetica,Sans-Serif;font-size:14;font-weight:bold; }
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<div id="colorScroll" style="border:1px #000000 solid;width:750;">
+				<table border="0" cellspacing="0" cellpadding="0" width="750">
+					<tr><td colspan="2" width="100%" height="5" bgcolor="000000"></td></tr>
+					<tr><td colspan="2" width="100%" height="30" bgcolor="8C3312" align="right"><a href="/"><img src="/images/pagetitle.gif" border="0"></a></td></tr>
+					<tr><td colspan="2" width="100%" height="4" bgcolor="000000"></td></tr>
+					<tr>
+						<td colspan="2" width="100%" height="304" bgcolor="DDD99D">
+{{ content | safe }}
+						</td>
+					</tr>
+					<tr><td colspan="2" width="100%" height="3" bgcolor="000000"></td></tr>
+					<tr>
+						<td width="575" height="18" bgcolor="8C3312">
+							&nbsp;&nbsp;&nbsp;&nbsp;<a class="whiteLink" href="/updates/">UPDATES</a>
+							&nbsp;&nbsp;&nbsp;&nbsp;<a class="whiteLink" href="/albums/">PHOTOS</a>
+						</td>
+						<td width="200" height="18" bgcolor="8C3312" align="right">
+							<a class="whiteLink" href="mailto:benji@benjismith.net">email benji</a><span style="color:ffffff;">&nbsp;&nbsp;&nbsp;|&nbsp&nbsp;&nbsp;</span><a class="whiteLink" href="mailto:hawkinsmith@hotmail.com">email julie</a>&nbsp;&nbsp;
+						</td>
+					</tr>
+					<tr><td colspan="2" width="100%" height="4" bgcolor="000000"></td></tr>
+				</table>
+			</div>
+			<div style="width:750;">
+				<table border="0" cellspacing="0" cellpadding="0" width="100%">
+					<tr>
+					<td align="left" width="45%">{% if photo and photo.prev %}<span class="default"><a class="defaultLink" href="/photos/{{ photo.prev }}/">PREVIOUS PHOTO</a></span>{% else %}<!-- prevButton -->{% endif %}</td>
+					<td align="center" width="10%"><!-- middle --></td>
+					<td align="right" width="45%">{% if photo and photo.next %}<span class="default"><a class="defaultLink" href="/photos/{{ photo.next }}/">NEXT PHOTO</a></span>{% else %}<!-- nextButton -->{% endif %}</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

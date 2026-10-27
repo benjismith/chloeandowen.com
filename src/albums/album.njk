@@ -1,0 +1,30 @@
+---
+pagination:
+  data: gallery.albums
+  size: 1
+  alias: album
+permalink: "/albums/{{ album.number }}/"
+layout: layouts/base.njk
+eleventyComputed:
+  title: "Album {{ album.number }}"
+---
+
+						<div align="center">
+							<table border="0" cellspacing="5" cellpadding="5">
+								<tr></tr>
+								<tr>
+									<td class="photoTitle" colspan="6" align="center" valign="middle">Album {{ album.number }}</td>
+								</tr>
+{%- for row in album.photos | chunk(6) %}
+								<tr>
+{%- for p in row %}
+									<td width="90" height="90" align="center" valign="middle"><a href="/photos/{{ p.id }}/"><img src="/images/thumbs/{{ p.id }}.jpg" border="0"></a></td>
+{%- endfor %}
+								</tr>
+{%- endfor %}
+{%- if album.photos.length % 6 == 0 %}
+								<tr></tr>
+{%- endif %}
+							</table>
+						</div>
+						<br><br>

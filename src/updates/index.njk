@@ -1,0 +1,7 @@
+---
+layout: layouts/base.njk
+title: Updates
+permalink: /updates/
+---
+{% for u in collections.updates %}<center><a class="defaultLink" href="{{ u.url }}">{{ u.data.dateText }} - {{ u.data.title }}</a></center>
+{% endfor %}<p class="photoTitle" align="center">MORE UPDATES COMING SOON!!!</p>

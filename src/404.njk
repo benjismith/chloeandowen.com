@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+title: Page Not Found
+permalink: /404.html
+---
+<div id="colorScroll" style="{height:304;padding:15px;overflow:auto;}"><p class="photoTitle">Page Not Found</p>
+<p class="default">There's no page at this address. Try the <a class="defaultLink" href="/updates/">updates</a> or the <a class="defaultLink" href="/albums/">photos</a>.</p>
+</div>
+<script>
+	// Send the old PHP-era URLs to their new homes, so old bookmarks and links still work.
+	(function () {
+		var path = location.pathname;
+		var params = new URLSearchParams(location.search);
+		var id = (params.get("id") || "").match(/^[A-Za-z0-9-]+$/) ? params.get("id") : null;
+		var album = (params.get("album") || "").match(/^[0-9]+$/) ? params.get("album") : null;
+		var to = null;
+		if (path === "/index.php") to = "/";
+		else if (path === "/updates.php") to = "/updates/";
+		else if (path === "/update.php" && id) to = "/updates/" + id + "/";
+		else if (path === "/photoAlbums.php") to = "/albums/";
+		else if (path === "/photoMenu.php") to = album ? "/albums/" + album + "/" : "/photos/";
+		else if ((path === "/photoDetail.php" || path === "/addCaption.php") && id) to = "/photos/" + id + "/";
+		if (to) location.replace(to);
+	})();
+</script>

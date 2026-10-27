@@ -1,0 +1,13 @@
+{
+  "name": "chloeandowen.com",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "rm -rf _site && eleventy --input=src --output=_site",
+    "dev": "eleventy --input=src --output=_site --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  },
+  "type": "commonjs"
+}
